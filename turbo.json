@@ -1,0 +1,19 @@
+{
+	"extends": ["//"],
+	"pipeline": {
+		"dev": {
+			"dependsOn": ["^build"],
+			"cache": false,
+			"persistent": true
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": [".vercel/**", ".svelte-kit/**"]
+		},
+		"lint": {},
+		"format:check": {},
+		"format:write": {
+			"cache": false
+		}
+	}
+}
